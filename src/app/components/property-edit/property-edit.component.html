@@ -1,0 +1,45 @@
+<!-- property-edit.component.html -->
+<form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+    <div class="card  p-3 border-radius-xl bg-white js-active" data-animation="FadeIn">
+        <h5 class="font-weight-bolder">Edit Property Information</h5>
+        <div class="content">
+            <div class="row mt-3">
+                <div class="col-12 col-sm-6">
+                    <label>Name</label>
+                    <input class=" form-control" type="text" placeholder="eg. Off-White" formControlName="Name">
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label>Price</label>
+                    <input class=" form-control" type="text" placeholder="eg. 42" formControlName="Price">
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label>Meter Number</label>
+                    <input class=" form-control" type="text" placeholder="eg. 42" formControlName="MeterNumber">
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label>Meter Image</label>
+                    <input class=" form-control" type="file" placeholder="fileupload" (change)="onFileChange($event)">
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label>Address</label>
+                    <input class=" form-control" type="text" placeholder="Address" formControlName="Address">
+                </div>
+                <div class="form-group col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label for="exampleFormControlSelect1">Property Type</label>
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="Type">
+                        <option *ngFor="let type of propertyTypes" [value]="type">{{ type }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label for="exampleFormControlSelect1">Availability Status</label>
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="RentalStatus">
+                        <option *ngFor="let status of availabilityStatuses" [value]="status">{{ status }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button-row d-flex mt-4">
+                <button class="btn bg-gradient-dark ms-auto mb-0 js-btn-next" type="submit" title="Next">Save</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -9,6 +9,7 @@ import { PropertyComponent } from './components/property/property.component';
 import { PropertyCreateComponent } from './components/property/property-create/property-create.component';
 import { PropertyListComponent } from './components/property/property-list/property-list.component';
 import { PropertyDetailComponent } from './components/property/property-detail/property-detail.component';
+import { PropertyEditComponent } from './components/property-edit/property-edit.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginpageComponent },
@@ -17,8 +18,9 @@ export const routes: Routes = [
     {
         path: 'properties', component: PropertyComponent,
         children: [
-            { path: 'create', component: PropertyCreateComponent },
             { path: 'list', component: PropertyListComponent },
+            { path: 'create', component: PropertyCreateComponent },
+            { path: ':id/edit', component: PropertyEditComponent },
             { path: 'detail/:id', component: PropertyDetailComponent },
             { path: '', redirectTo: 'list', pathMatch: 'full' }
         ]

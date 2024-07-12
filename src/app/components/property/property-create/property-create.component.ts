@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertyService } from '../../../services/property.service';
 import { Router } from '@angular/router';
+import { BackbuttonComponent } from '../../backbutton/backbutton.component';
 
 enum PropertyType {
   Apartment = 'Apartment',
@@ -21,7 +22,7 @@ enum AvailabilityStatus {
 @Component({
   selector: 'app-property-create',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, BackbuttonComponent],
   templateUrl: './property-create.component.html',
   styleUrls: ['./property-create.component.css']
 })

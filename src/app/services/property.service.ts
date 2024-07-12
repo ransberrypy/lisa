@@ -29,7 +29,7 @@ export class PropertyService {
   }
 
   // Method to update an existing property
-  updateProperty(property: any) {
+  updateProperty(id:number, property: any) {
     return this.http.put<any>(`${this.apiUrl}/api/property/${property.id}`, property);
   }
 
