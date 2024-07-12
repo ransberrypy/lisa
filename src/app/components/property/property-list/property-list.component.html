@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let property of properties">
+        <div class="card" (click)="viewDetail(property.PropertyId)" >
+            <div class="card-header mx-4 p-3 text-center">
+                <img [src]="'data:image/png;base64,' + property.meterImg" alt="Meter Image" class="img-fluid" width="300px" height="200px"/>
+            </div>
+            <div class="card-body pt-0 p-3 text-center">
+                <h6 class="text-center mb-0">{{property.name}}</h6>
+                <span class="text-xs">Belong Interactive</span>
+                <hr class="horizontal dark my-3">
+                <h5 class="mb-0">+${{property.price}}</h5>
+                <!-- <a [routerLink]="['/property-detail', property.propertyId]">details</a> -->
+            </div>
+        </div>
+    </div>
+</div>

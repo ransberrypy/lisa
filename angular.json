@@ -50,6 +50,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/ui.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -80,6 +81,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "lisa_web:build:production"

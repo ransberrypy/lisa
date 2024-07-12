@@ -1,0 +1,19 @@
+<form role="form" (ngSubmit)="onLogin()">
+    <div class="mb-3 input__wrapper">
+        <label>Username</label>
+        <input type="text" class="form-control mt-2" [(ngModel)]="username" name="username" required
+            placeholder="Username" aria-label="Username" aria-describedby="username-addon">
+    </div>
+
+    <div class="mb-3 input__wrapper">
+        <input [type]="inputType" id="password" [(ngModel)]="password" name="password" required
+            class="form-control input__field" placeholder="Your password" aria-describedby="password-addon"
+            aria-label="Password" pattern="">
+        <label for="password" class="input__label">Password</label>
+        <img [src]="iconSrc" alt="Eye icon" title="Eye Icon" class="input__icon" (click)="toggleInputType($event)">
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+    </div>
+</form>
