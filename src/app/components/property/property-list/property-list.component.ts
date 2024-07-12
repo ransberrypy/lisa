@@ -7,12 +7,12 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-property-list',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './property-list.component.html',
   styleUrl: './property-list.component.css'
 })
 export class PropertyListComponent {
-  properties!: any[]; 
+  properties!: any[];
 
   constructor(private propertyService: PropertyService, private router: Router) { }
 
@@ -27,7 +27,7 @@ export class PropertyListComponent {
   }
 
   navigateToDetail(propertyId: number): void {
-    this.router.navigate(['properties/detail', propertyId.toString()]);
+    this.router.navigate([`properties/${propertyId}/detail`]);//propertyId.toString()
   }
 
   deleteProperty(id: number): void {
@@ -37,5 +37,9 @@ export class PropertyListComponent {
     }, error => {
       console.error('Error deleting property:', error);
     });
+  }
+
+  editProperty(propertyId: number): void {
+    this.router.navigate([`/properties/${propertyId}/edit`]);
   }
 }

@@ -21,7 +21,7 @@ export const routes: Routes = [
             { path: 'list', component: PropertyListComponent },
             { path: 'create', component: PropertyCreateComponent },
             { path: ':id/edit', component: PropertyEditComponent },
-            { path: 'detail/:id', component: PropertyDetailComponent },
+            { path: ':id/detail', component: PropertyDetailComponent },
             { path: '', redirectTo: 'list', pathMatch: 'full' }
         ]
     },
